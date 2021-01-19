@@ -5,7 +5,6 @@ function concatFiles(cb,destinationfile,...rest){
     const files= [...rest];
     let finalString="";
     const fileLength=files.length;
-    console.log("fileLength",fileLength)
 
     function iterate(finalString,index){
         if(index === fileLength){
@@ -24,10 +23,8 @@ function concatFiles(cb,destinationfile,...rest){
     
 }
 
-    
 
     function finished(destinationFile,result){
-        console.log("the result is",result);
         fs.writeFile("result.txt",result,"UTF-8",(err,data)=>{
             if(err){
                 console.log(err);
